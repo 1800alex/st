@@ -1637,6 +1637,9 @@ xseticontitle(char *p)
 	XTextProperty prop;
 	DEFAULT(p, opt_title);
 
+	XClassHint ch = {"st", "st"};
+	XSetClassHint(xw.dpy, xw.win, &ch);
+
 	if (Xutf8TextListToTextProperty(xw.dpy, &p, 1, XUTF8StringStyle,
 	                                &prop) != Success)
 		return;
