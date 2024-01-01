@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+static char *font = "hacknerdfont:pixelsize=12:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -76,6 +76,9 @@ static int bellvolume = 0;
 /* default TERM value */
 char *termname = "st-256color";
 
+/* bg opacity */
+float alpha = 0.9;
+
 /*
  * spaces per tab
  *
@@ -93,9 +96,6 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
-/* bg opacity */
-float alpha = 0.8;
-
 typedef struct {
 	const char* const colors[258]; /* terminal colors */
 	unsigned int fg;               /* foreground */
@@ -109,18 +109,18 @@ typedef struct {
  * foreground, background, cursor, reverse cursor
  */
 static const ColorScheme schemes[] = {
-	// st (dark)
-	{{"black", "red3", "green3", "yellow3",
-	  "blue2", "magenta3", "cyan3", "gray90",
-	  "gray50", "red", "green", "yellow",
-	  "#5c5cff", "magenta", "cyan", "white",
-	  [256]="#cccccc", "#555555"}, 7, 0, 256, 257},
-
 	// Alacritty (dark)
 	{{"#1d1f21", "#cc6666", "#b5bd68", "#f0c674",
 	  "#81a2be", "#b294bb", "#8abeb7", "#c5c8c6",
 	  "#666666", "#d54e53", "#b9ca4a", "#e7c547",
 	  "#7aa6da", "#c397d8", "#70c0b1", "#eaeaea",
+	  [256]="#cccccc", "#555555"}, 7, 0, 256, 257},
+
+	// st (dark)
+	{{"black", "red3", "green3", "yellow3",
+	  "blue2", "magenta3", "cyan3", "gray90",
+	  "gray50", "red", "green", "yellow",
+	  "#5c5cff", "magenta", "cyan", "white",
 	  [256]="#cccccc", "#555555"}, 7, 0, 256, 257},
 
 	// One Half dark

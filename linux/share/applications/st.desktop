@@ -1,0 +1,18 @@
+[Desktop Entry]
+Type=Application
+TryExec=st
+Exec=st
+Icon=st-terminal
+Terminal=false
+Categories=System;TerminalEmulator;
+
+Name=st
+GenericName=Terminal
+Comment=Simple Terminal for X from Suckless.org Community
+StartupWMClass=st
+Actions=New;
+
+[Desktop Action New]
+Name=New Terminal
+Exec=st
+
